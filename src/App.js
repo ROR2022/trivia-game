@@ -19,7 +19,7 @@ function App() {
   }, [category])
 
 
-
+  /*https://the-trivia-api.com/api/questions?categories=arts_and_literature&limit=20&region=MX&difficulty=easy&tags=1400's*/
   /* general=9, history=23, tv=14, geografy=22*/
   
  const trivia = ()=> {
@@ -73,6 +73,10 @@ function App() {
       setCategory(22);
     }
   }
+  function nuevojuego(){
+    setWelcome(true);
+    setShowResult(false);
+  }
   
   return (
     <div className="App">
@@ -89,12 +93,12 @@ function App() {
                     className="btn" 
                     onClick={toggleWelcome}
                 >
-                    Comenzar
+                    Start 
                 </button>
       </div>
       }
       {!welcome && !showResult && <div><Quiz trivia={trivia()} result={muestraResult} /></div>}
-      {showResult && <Result result={resultados}/>}
+      {showResult && <Result result={resultados} again={nuevojuego}/>}
     </div>
   );
 }

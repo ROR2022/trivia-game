@@ -19,6 +19,9 @@ export default function Result(props) {
 
     })
   return (
-    <div className='quiz'>{showResult}</div>
+    <div className='quiz'>
+      {showResult}
+      <button className='btn' onClick={props.again}>Try Again</button>
+    </div>
   )
 }
